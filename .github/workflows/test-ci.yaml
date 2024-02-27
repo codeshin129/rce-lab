@@ -1,5 +1,13 @@
 name: test-ci
 
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - ready_for_review
+      - reopened
+
 defaults:
   run:
     shell: bash
@@ -10,6 +18,7 @@ jobs:
     name: test step
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v2
       - name: ls them
         run: |
           cd VM
