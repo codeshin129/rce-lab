@@ -1,5 +1,13 @@
 name: test-ci
 
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - ready_for_review
+      - reopened
+
 defaults:
   run:
     shell: bash
