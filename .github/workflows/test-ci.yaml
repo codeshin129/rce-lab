@@ -1,0 +1,17 @@
+name: test-ci
+
+defaults:
+  run:
+    shell: bash
+    working-directory: infra/module
+
+jobs:
+  test-step:
+    name: test step
+    runs-on: ubuntu-20.04
+    steps:
+      - name: ls them
+        run: |
+          cd VM
+          ls
+          echo "tested"
